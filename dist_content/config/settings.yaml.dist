@@ -1,1 +1,5 @@
-format: "yaml"
+loaders: 
+- yaml
+- json 
+
+default_loader: "yaml"
