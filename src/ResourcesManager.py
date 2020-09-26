@@ -19,8 +19,10 @@ class ResourcesManager(Manager):
     def __init__(self):
         self.logger = logging.getLogger(__name__)
 
-        config_manager = manager("config")
-        settings = config_manager.load_settings("resources")
+        self.__loaders = {}
+
+    def create_loaders(self):
+        settings = manager("config").load_settings("resources")
 
         self.__loaders = {}
 

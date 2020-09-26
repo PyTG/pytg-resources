@@ -7,14 +7,12 @@ from .ResourcesManager import ResourcesManager
 def initialize():
     logging.info("Initializing resources module...")
 
-    config_manager = ModulesLoader.load_manager("config")
-
-    settings = config_manager.load_settings("resources")
-
     ResourcesManager.initialize()
 
 def connect():
-    pass
+    logging.info("Connecting resources module...")
+
+    load_manager().create_loaders()
 
 def load_manager():
     return ResourcesManager.load()
