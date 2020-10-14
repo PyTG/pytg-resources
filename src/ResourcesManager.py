@@ -6,6 +6,7 @@ from modules.pytg.load import manager
 
 from .loaders.YamlResourcesLoader import YamlResourcesLoader
 from .loaders.JsonResourcesLoader import JsonResourcesLoader
+from .loaders.PlainResourcesLoader import PlainResourcesLoader
 
 class ResourcesManager(Manager):
     @staticmethod
@@ -43,6 +44,9 @@ class ResourcesManager(Manager):
 
         if loader_id == "json":
             return JsonResourcesLoader()
+
+        if loader_id == "plain":
+            return PlainResourcesLoader()
 
         self.logger.warning("Unknown loader id '{}'".format(loader_id))
 
