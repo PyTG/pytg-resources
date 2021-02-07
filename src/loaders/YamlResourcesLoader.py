@@ -1,6 +1,6 @@
 import yaml, logging
 
-from modules.pytg.load import get_module_content_folder
+from pytg.load import get_module_content_folder
 
 from .ResourcesLoader import ResourcesLoader
 

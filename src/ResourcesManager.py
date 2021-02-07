@@ -1,22 +1,13 @@
-import yaml, os, logging
+import logging
 
-from modules.pytg.Manager import Manager
-
-from modules.pytg.load import manager
+from pytg.Manager import Manager
+from pytg.load import manager
 
 from .loaders.YamlResourcesLoader import YamlResourcesLoader
 from .loaders.JsonResourcesLoader import JsonResourcesLoader
 from .loaders.PlainResourcesLoader import PlainResourcesLoader
 
 class ResourcesManager(Manager):
-    @staticmethod
-    def initialize():
-        ResourcesManager.__instance = ResourcesManager()
-
-    @staticmethod
-    def load():
-        return ResourcesManager.__instance
-
     def __init__(self):
         self.logger = logging.getLogger(__name__)
 
